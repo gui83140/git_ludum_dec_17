@@ -18,8 +18,9 @@ public class shipcontroller : MonoBehaviour {
         posx = Input.GetAxis("Horizontal");
         posy = Input.GetAxis("Vertical");
         mvt = new Vector2(transform.position.x + posx*speedmvt, transform.position.y + posy*speedmvt);
-        transform.position = mvt ;
-        transform.position.x = Mathf.Clamp(transform.position.x, -2.0f, 2.0f);
+        //mvt.x = Mathf.Clamp(mvt.x, -50f, 100f);
+        transform.position = mvt;
+        
 
         //transform.position = new Vector3(Mathf.Clamp(Time.time, 1.0F, 3.0F), 0, 0);
     }
