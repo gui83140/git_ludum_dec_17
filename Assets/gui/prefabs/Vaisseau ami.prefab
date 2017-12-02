@@ -39,9 +39,10 @@ GameObject:
   - component: {fileID: 114888548154980266}
   - component: {fileID: 50545902852898232}
   - component: {fileID: 61501781808874082}
+  - component: {fileID: 60686071837708376}
   m_Layer: 0
   m_Name: Vaisseau ami
-  m_TagString: Untagged
+  m_TagString: friend
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +83,7 @@ Transform:
   m_GameObject: {fileID: 1694751597929856}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 4183106300358440}
   - {fileID: 4884968956967380}
@@ -122,13 +123,113 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!60 &60686071837708376
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1694751597929856}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7.2, y: 6.56}
+    newSize: {x: 7.2, y: 6.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.8399999, y: -1.86}
+      - {x: -1.52, y: -1.86}
+      - {x: -1.1999999, y: -1.87}
+      - {x: -1.12, y: -2.24}
+      - {x: -0.68, y: -2.4199998}
+      - {x: -0.47, y: -2.25}
+      - {x: -0.32, y: -1.76}
+      - {x: 0.37, y: -1.86}
+      - {x: 0.52, y: -2.1699998}
+      - {x: 0.71999997, y: -2.34}
+      - {x: 0.88, y: -2.34}
+      - {x: 0.9, y: -2.32}
+      - {x: 1.06, y: -2.21}
+      - {x: 1.25, y: -1.8499999}
+      - {x: 1.51, y: -1.89}
+      - {x: 1.93, y: -1.89}
+      - {x: 2.07, y: -1.5899999}
+      - {x: 2.3, y: -2.03}
+      - {x: 2.46, y: -2.52}
+      - {x: 2.78, y: -3.28}
+      - {x: 3.09, y: -3.28}
+      - {x: 3.35, y: -3.05}
+      - {x: 3.54, y: -2.6699998}
+      - {x: 3.6, y: -2.09}
+      - {x: 3.6, y: -1.63}
+      - {x: 3.46, y: -1.66}
+      - {x: 3.47, y: -0.32}
+      - {x: 3.1599998, y: 0.02}
+      - {x: 2.6, y: -0.07}
+      - {x: 2.19, y: -0.16}
+      - {x: 1.91, y: -0.01}
+      - {x: 2.02, y: 0.88}
+      - {x: 2.02, y: 1.36}
+      - {x: 1.8399999, y: 1.54}
+      - {x: 1.52, y: 1.54}
+      - {x: 1.3399999, y: 1.36}
+      - {x: 1.3399999, y: 0.88}
+      - {x: 1.36, y: 0.85999995}
+      - {x: 1.36, y: 0.44}
+      - {x: 1.05, y: 0.76}
+      - {x: 0.9, y: 0.74}
+      - {x: 0.9, y: 1.8399999}
+      - {x: 0.88, y: 1.86}
+      - {x: 0.75, y: 2.3999999}
+      - {x: 0.47, y: 2.55}
+      - {x: 0.42999998, y: 3.04}
+      - {x: 0.19, y: 3.28}
+      - {x: -0.19999999, y: 3.28}
+      - {x: -0.45999998, y: 3.03}
+      - {x: -0.74, y: 2.37}
+      - {x: -0.93, y: 1.8499999}
+      - {x: -1.09, y: 0.76}
+      - {x: -1.49, y: 0.28}
+      - {x: -1.31, y: 0.87}
+      - {x: -1.3399999, y: 1.41}
+      - {x: -1.48, y: 1.53}
+      - {x: -1.86, y: 1.5899999}
+      - {x: -2.05, y: 1.41}
+      - {x: -2.02, y: 0.83}
+      - {x: -1.86, y: 0.85999995}
+      - {x: -2.07, y: -0.03}
+      - {x: -2.23, y: -0.28}
+      - {x: -2.61, y: 0}
+      - {x: -3.12, y: -0.06}
+      - {x: -3.3, y: -0.19999999}
+      - {x: -3.46, y: -0.35999998}
+      - {x: -3.6, y: -1.5999999}
+      - {x: -3.6, y: -2.05}
+      - {x: -3.46, y: -2.6399999}
+      - {x: -3.4399998, y: -2.6599998}
+      - {x: -3.31, y: -3.04}
+      - {x: -3.07, y: -3.28}
+      - {x: -2.78, y: -3.28}
+      - {x: -2.46, y: -2.48}
+      - {x: -2.3, y: -2}
+      - {x: -2.28, y: -1.67}
 --- !u!61 &61501781808874082
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1694751597929856}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -175,11 +276,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6fa59086ba1b04e9ec87d8af862911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shooted: 0
   speed: 35
   projectile: {fileID: 1544520364990988, guid: 56421a6704222884b82ff731a418f039, type: 2}
   debutprojectile1: {fileID: 1972456137002040}
   debutprojectile2: {fileID: 1014619216972282}
   speedlaser: 0.15
+  firerate: 25
 --- !u!212 &212387767209531778
 SpriteRenderer:
   m_ObjectHideFlags: 1

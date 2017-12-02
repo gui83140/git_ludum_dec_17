@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class friendlymissile : MonoBehaviour {
 
-	public float speedlaser;
-    
 
 
-    void Start () {
 
-	}
-	
-	
-	void Update () {
-		
-	}
+    private void Update()
+    {
+
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Transform.Destroy(this);
+        if (collision.gameObject.tag == "enemis")
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
+
 }
