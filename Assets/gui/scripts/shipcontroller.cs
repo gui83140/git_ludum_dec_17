@@ -25,6 +25,10 @@ public class shipcontroller : MonoBehaviour {
     Rigidbody2D rb2d;
     public float speed;
 
+    public GameObject projectile;
+    public GameObject debutprojectile;
+    float canon;
+    Rigidbody2D rb2dcanon;
 
     void Start () {
         rb2d = GetComponent<Rigidbody2D>();
@@ -47,10 +51,26 @@ public class shipcontroller : MonoBehaviour {
          rb2d.AddForce(mvt * speed);
          */
 
+        // mouvement ok
         movehorizon = Input.GetAxis("Horizontal");
         moveverti = Input.GetAxis("Vertical");
         mvt = new Vector2(movehorizon*speed, moveverti*speed);
         rb2d.velocity = mvt;
+
+        // projectile
+        if ( Input.GetMouseButtonDown(0))
+        {
+            GameObject currentprojectile = Instantiate(projectile);
+            canon = debutprojectile.transform.position.x;
+            currentprojectile.transform.position = new Vector2 (canon, 0);
+
+
+
+        }
+
+
+
+        
 
     }
 
