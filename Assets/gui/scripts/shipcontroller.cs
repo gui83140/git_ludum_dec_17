@@ -26,9 +26,12 @@ public class shipcontroller : MonoBehaviour {
     public float speed;
 
     public GameObject projectile;
-    public GameObject debutprojectile;
-    float canon;
-    Rigidbody2D rb2dcanon;
+    public GameObject debutprojectile1;
+    public GameObject debutprojectile2;
+    float canon1; float canon11;
+    float canon2; float canon22;
+    public float speedlaser;
+
 
     void Start () {
         rb2d = GetComponent<Rigidbody2D>();
@@ -60,10 +63,21 @@ public class shipcontroller : MonoBehaviour {
         // projectile
         if ( Input.GetMouseButtonDown(0))
         {
-            GameObject currentprojectile = Instantiate(projectile);
-            canon = debutprojectile.transform.position.x;
-            currentprojectile.transform.position = new Vector2 (canon, 0);
+            GameObject currentprojectile1 = Instantiate(projectile);
+            Rigidbody2D rb1 = currentprojectile1.GetComponent<Rigidbody2D>();
+            canon1 = debutprojectile1.transform.position.x;
+            canon11 = debutprojectile1.transform.position.y;
+            currentprojectile1.transform.position = new Vector2 (canon1, canon11);
+            Vector2 haut1 = new Vector2(canon1, 250f);
+            rb1.AddForce( haut1 * speedlaser, ForceMode2D.Impulse);
 
+            GameObject currentprojectile2 = Instantiate(projectile);
+            Rigidbody2D rb2 = currentprojectile2.GetComponent<Rigidbody2D>();
+            canon2 = debutprojectile2.transform.position.x;
+            canon22 = debutprojectile2.transform.position.y;
+            currentprojectile2.transform.position = new Vector2(canon2, canon22);
+            Vector2 haut2 = new Vector2(canon2, 250f);
+            rb2.AddForce(haut2 * speedlaser, ForceMode2D.Impulse);
 
 
         }

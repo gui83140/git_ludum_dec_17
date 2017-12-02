@@ -158,8 +158,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 35
-  projectile: {fileID: 0}
-  debutprojectile: {fileID: 0}
+  projectile: {fileID: 1544520364990988, guid: 56421a6704222884b82ff731a418f039, type: 2}
+  debutprojectile1: {fileID: 1605381632981968}
+  debutprojectile2: {fileID: 1400352574141110}
+  speedlaser: 0.15
 --- !u!212 &212985475411741936
 SpriteRenderer:
   m_ObjectHideFlags: 1
