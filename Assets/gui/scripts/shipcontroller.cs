@@ -22,12 +22,15 @@ public class shipcontroller : MonoBehaviour
 
     //public bool shooted;
 
-
-    
+   
+    public GameObject evolution1;
+    public GameObject evolution2;
+    public GameObject evolution3;
 
     public  static float actuallife;
     public  static float maxlife;
     public static Vector3 posi;
+    private int N;
 
 
     public float pubicmaxlife;
@@ -55,6 +58,7 @@ public class shipcontroller : MonoBehaviour
 
     public float firerate;
     float countime;
+    float x, y;
 
     float timedestruction;
 
@@ -64,6 +68,7 @@ public class shipcontroller : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         actuallife = maxlife;
+        N = 0;
     }
 
 
@@ -91,7 +96,9 @@ public class shipcontroller : MonoBehaviour
         mvt = new Vector2(movehorizon * speed, moveverti * speed);
         rb2d.velocity = mvt;
 
-        posi = transform.position ;
+        Vector3 posi = transform.position ;
+        float x = transform.position.x;
+        float y = transform.position.y;
 
 
         
@@ -183,8 +190,10 @@ public class shipcontroller : MonoBehaviour
 
         if (collision.gameObject.tag == "levelup")
         {
-           // Debug.Log("bite");
-            Destroy(gameObject);
+                GameObject Bite = Instantiate(evolution1);
+                Bite.transform.position = posi;
+                Destroy(this.gameObject);
+
         }
 
         if (collision.gameObject.tag == "enemis")

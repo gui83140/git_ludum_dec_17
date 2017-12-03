@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class shipcontroller2 : MonoBehaviour {
 
+
+    public GameObject evolution1;
+    public GameObject evolution2;
+    public GameObject evolution3;
+
     public  static float actuallife2;
     public  static float maxlife2;
     public static Vector3 posi;
@@ -169,8 +174,9 @@ public class shipcontroller2 : MonoBehaviour {
 
         if (collision.gameObject.tag == "levelup")
         {
-            //Debug.Log("bite");
-            Destroy(gameObject);
+            GameObject Bite = Instantiate(evolution2);
+            Bite.transform.position = posi;
+            Destroy(this.gameObject);
         }
 
         if (collision.gameObject.tag == "enemis")

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class fondmanage : MonoBehaviour {
 
-
+    /*
     public static GameObject evolution1;
     public  static GameObject evolution2;
     public static GameObject evolution3;
@@ -56,8 +56,12 @@ public class fondmanage : MonoBehaviour {
 
         }
         Debug.Log("chiotte");
+<<<<<<< HEAD
     }
 
     void ChangeVaiss() { 
 }
+=======
+    }*/
+>>>>>>> 8c972737f35cf614d4fb722e4e709b321f021663
 }

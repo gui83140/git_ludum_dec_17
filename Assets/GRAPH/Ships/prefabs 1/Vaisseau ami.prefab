@@ -402,9 +402,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6fa59086ba1b04e9ec87d8af862911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evolution1: {fileID: 1224948668629528, guid: 6efa6559a8c72b44eac2c1432e240589, type: 2}
-  evolution2: {fileID: 1759142198638506, guid: 6fdba527ce13b074a8434104d4c848d0, type: 2}
-  evolution3: {fileID: 0}
   pubicmaxlife: 100
   speed: 35
   projectile: {fileID: 1544520364990988, guid: 56421a6704222884b82ff731a418f039, type: 2}
