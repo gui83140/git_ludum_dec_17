@@ -43,6 +43,7 @@ public class healthpick : MonoBehaviour {
         if (collision.gameObject.tag == "friend")
         {
             shipcontroller.actuallife = shipcontroller.actuallife +50;
+            shipcontroller2.actuallife2 = shipcontroller2.actuallife2 + 50;
             Destroy(gameObject);
 
         }

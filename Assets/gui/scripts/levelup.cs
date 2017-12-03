@@ -30,10 +30,10 @@ public class levelup : MonoBehaviour {
            // Instantiate(evolution);
             GameObject currentprojectile2 = Instantiate(evolution);
             Rigidbody2D rb2 = currentprojectile2.GetComponent<Rigidbody2D>();
-            float posx = socket.transform.position.x;
-            float posy = socket.transform.position.y;
-            currentprojectile2.transform.position = new Vector2(posx, posy);
-
+            // float posx = socket.transform.position.x;
+            //float posy = socket.transform.position.y;
+            //currentprojectile2.transform.position = new Vector2(posx, posy);
+            currentprojectile2.transform.position = shipcontroller.posi;
 
             //shipcontroller.actuallife = shipcontroller.actuallife + 50;
             Destroy(gameObject);
