@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shipcontroller2 : MonoBehaviour {
+public class vaissseau3 : MonoBehaviour {
 
-    public  static float actuallife2;
-    public  static float maxlife2;
+    public static float actuallife2;
+    public static float maxlife2;
     public static Vector3 posi;
 
     public float pubicmaxlife;
@@ -25,9 +25,12 @@ public class shipcontroller2 : MonoBehaviour {
     public GameObject debutprojectile1;
     public GameObject debutprojectile2;
     public GameObject debutprojectile3;
+    public GameObject debutprojectile4;
     float canon1; float canon11;
     float canon2; float canon22;
     float canon3; float canon33;
+    float canon4; float canon44;
+    
 
     public float speedlaser;
 
@@ -89,8 +92,10 @@ public class shipcontroller2 : MonoBehaviour {
             canon11 = debutprojectile1.transform.position.y;
             currentprojectile1.transform.position = new Vector2(canon1, canon11);
             // shooted = true;
-            Vector2 haut1 = new Vector2(canon1, 250f);
-            rb1.AddForce(haut1 * speedlaser, ForceMode2D.Impulse);
+            //Vector2 haut1 = new Vector2(canon1, 250f);
+            //rb1.AddForce(haut1 * speedlaser, ForceMode2D.Impulse);
+            rb1.AddForce(transform.up * speedlaser, ForceMode2D.Impulse);
+
 
             GameObject currentprojectile2 = Instantiate(projectile);
             Rigidbody2D rb2 = currentprojectile2.GetComponent<Rigidbody2D>();
@@ -98,9 +103,9 @@ public class shipcontroller2 : MonoBehaviour {
             canon22 = debutprojectile2.transform.position.y;
             currentprojectile2.transform.position = new Vector2(canon2, canon22);
             //shooted = true;
-            Vector2 haut2 = new Vector2(canon2, 250f);
-            rb2.AddForce(haut2 * speedlaser, ForceMode2D.Impulse);
-
+            //Vector2 haut2 = new Vector2(canon2, 250f);
+            // rb2.AddForce(haut2 * speedlaser, ForceMode2D.Impulse);
+            rb2.AddForce(transform.up * speedlaser, ForceMode2D.Impulse);
 
 
             GameObject currentprojectile3 = Instantiate(projectile);
@@ -108,9 +113,29 @@ public class shipcontroller2 : MonoBehaviour {
             canon3 = debutprojectile3.transform.position.x;
             canon33 = debutprojectile3.transform.position.y;
             currentprojectile3.transform.position = new Vector2(canon3, canon33);
+            currentprojectile3.transform.Rotate(0, 0, -45);
             //shooted = true;
-            Vector2 haut3 = new Vector2(canon3, 250f);
-            rb3.AddForce(haut3 * speedlaser, ForceMode2D.Impulse);
+            // Vector2 haut3 = new Vector2(canon3, 250f);
+            //rb3.AddForce(haut3 * speedlaser, ForceMode2D.Impulse);
+            //rb3.AddForce(transform.up * speedlaser, ForceMode2D.Impulse);
+            rb3.AddForce(transform.up * speedlaser / 2 + (transform.right * speedlaser / 2), ForceMode2D.Impulse);
+
+
+            GameObject currentprojectile4 = Instantiate(projectile);
+            Rigidbody2D rb4 = currentprojectile4.GetComponent<Rigidbody2D>();
+            canon4 = debutprojectile4.transform.position.x;
+            canon44 = debutprojectile4.transform.position.y;
+            currentprojectile4.transform.position = new Vector2(canon4, canon44);
+            currentprojectile4.transform.Rotate(0,0,45);
+
+            
+
+            //shooted = true;
+            // Vector2 haut3 = new Vector2(canon3, 250f);
+            //rb3.AddForce(haut3 * speedlaser, ForceMode2D.Impulse);
+            rb4.AddForce(transform.up * speedlaser/2 + (-transform.right *speedlaser/2), ForceMode2D.Impulse);
+
+
 
             countime = 0;
 
@@ -150,7 +175,7 @@ public class shipcontroller2 : MonoBehaviour {
         {
 
             actuallife2 = actuallife2 - 10f;
-            //Debug.Log("yaya");
+            Debug.Log("yaya");
             // barredevie.healtbarre = barredevie.healtbarre - 10;
             //Instantiate(destruction);
 

@@ -28,7 +28,7 @@ public class vievaisseau2 : MonoBehaviour {
 
         maxhealtbarre = shipcontroller2.maxlife2;
         greenlife.fillAmount = healtbarre / maxhealtbarre;
-        Debug.Log(greenlife.fillAmount);
+        //Debug.Log(greenlife.fillAmount);
 
 
 
