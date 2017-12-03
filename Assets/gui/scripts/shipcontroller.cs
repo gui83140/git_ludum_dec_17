@@ -171,6 +171,12 @@ public class shipcontroller : MonoBehaviour
             // Destroy(gameObject);
         }
 
+        if (collision.gameObject.tag == "levelup")
+        {
+            Debug.Log("bite");
+            //Destroy(gameObject);
+        }
+
         if (collision.gameObject.tag == "enemis")
         {
 
@@ -183,11 +189,8 @@ public class shipcontroller : MonoBehaviour
                 anim.SetBool("explosion", true);
                 destruction = true;
             }
-
-
-            //Destroy(gameObject);
+            
         }
-
     }
 }
 

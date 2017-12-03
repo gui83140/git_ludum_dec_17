@@ -10,6 +10,7 @@ TagManager:
   - outscreen
   - enemisfire
   - missilefriend
+  - levelup
   layers:
   - Default
   - TransparentFX

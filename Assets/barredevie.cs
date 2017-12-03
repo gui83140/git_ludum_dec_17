@@ -26,7 +26,7 @@ public class barredevie : MonoBehaviour {
         healtbarre = shipcontroller.actuallife;
         maxhealtbarre = shipcontroller.maxlife;
         greenlife.fillAmount = healtbarre / maxhealtbarre;
-        Debug.Log(greenlife.fillAmount);
+        //Debug.Log(greenlife.fillAmount);
 
 
 
