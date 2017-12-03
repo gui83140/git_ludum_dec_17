@@ -30,7 +30,7 @@ public class vievaisseaux4 : MonoBehaviour {
 
         maxhealtbarre = vaissseaux4.maxlife2;
         greenlife.fillAmount = healtbarre / maxhealtbarre;
-        Debug.Log(greenlife.fillAmount);
+        
 
 
 
