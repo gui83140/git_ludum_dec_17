@@ -174,7 +174,7 @@ public class shipcontroller : MonoBehaviour
         if (collision.gameObject.tag == "levelup")
         {
             Debug.Log("bite");
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
 
         if (collision.gameObject.tag == "enemis")
