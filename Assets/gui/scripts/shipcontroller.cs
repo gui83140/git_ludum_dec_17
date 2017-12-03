@@ -20,7 +20,19 @@ public class shipcontroller : MonoBehaviour
     public float speed;
     */
 
-    public bool shooted;
+    //public bool shooted;
+
+
+    
+
+   public  static float actuallife;
+    public  static float maxlife;
+
+    public float pubicmaxlife;
+
+    bool destruction;
+
+    //public GameObject destruction;
 
     float movehorizon;
     float moveverti;
@@ -39,10 +51,14 @@ public class shipcontroller : MonoBehaviour
     public float firerate;
     float countime;
 
+    float timedestruction;
+
     void Start()
     {
+        maxlife = pubicmaxlife;
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        actuallife = maxlife;
     }
 
 
@@ -71,7 +87,7 @@ public class shipcontroller : MonoBehaviour
         rb2d.velocity = mvt;
 
 
-
+        
 
 
 
@@ -80,7 +96,7 @@ public class shipcontroller : MonoBehaviour
 
 
         // projectile
-        if (Input.GetMouseButton(0) && countime >= firerate)
+        if (Input.GetMouseButton(0) && countime >= firerate && destruction == false)
         {
             GameObject currentprojectile1 = Instantiate(projectile);
             Rigidbody2D rb1 = currentprojectile1.GetComponent<Rigidbody2D>();
@@ -114,6 +130,20 @@ public class shipcontroller : MonoBehaviour
             anim.SetBool("move", false);
 
         }
+
+        if (destruction)
+        {
+            timedestruction = timedestruction + 1;
+            rb2d.constraints = RigidbodyConstraints2D.FreezePosition;
+            if (timedestruction >= 60)
+            {
+                Destroy(gameObject);
+
+            }
+
+        }
+
+       
     }
 
     //destruction vaisseau
@@ -122,12 +152,40 @@ public class shipcontroller : MonoBehaviour
         //Transform.Destroy(this);
         if (collision.gameObject.tag == "enemisfire")
         {
-            Destroy(gameObject);
+
+            actuallife = actuallife - 10f;
+
+           // barredevie.healtbarre = barredevie.healtbarre - 10;
+            //Instantiate(destruction);
+
+            if (actuallife <= 0)
+            {
+
+
+
+                anim.SetBool("explosion", true);
+                destruction = true;
+            }
+            //Destroy(gameObject);
+
+            // Destroy(gameObject);
         }
 
         if (collision.gameObject.tag == "enemis")
         {
-            Destroy(gameObject);
+
+            actuallife = actuallife - 100f;
+            if (actuallife <= 0)
+            {
+
+
+
+                anim.SetBool("explosion", true);
+                destruction = true;
+            }
+
+
+            //Destroy(gameObject);
         }
 
     }

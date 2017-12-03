@@ -5,6 +5,12 @@ using UnityEngine;
 public class turretscript : MonoBehaviour
 {
 
+
+
+    float timedestruction;
+    bool destruction;
+    Rigidbody2D rb2d;
+
     bool onscreen;
     
     public float speedfire;
@@ -26,19 +32,20 @@ public class turretscript : MonoBehaviour
     {
         firerate = 50;
         anim = GetComponent<Animator>();
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         anim.SetBool("fire", false);
-        firerate = firerate+1 ;
+        firerate = firerate + 1;
         posy = transform.position.y;
         posx = transform.position.x;
         transform.Rotate(0, 0, speedrotato);
         transform.position = new Vector2(posx, posy - speedmove);
 
-        if (firerate >= 50 && onscreen == true)
+        if (firerate >= 50 && onscreen == true && destruction == false)
         {
 
             anim.SetBool("fire", true);
@@ -51,7 +58,7 @@ public class turretscript : MonoBehaviour
             //currentprojectile1.transform.Translate(transform.forward * Time.deltaTime);
             //rb1.AddForce(socket1.transform.forward * speedfire, ForceMode2D.Impulse);
             rb1.AddForce(-transform.up * speedfire, ForceMode2D.Impulse);
-            
+
 
 
             GameObject currentprojectile2 = Instantiate(projectile);
@@ -60,15 +67,28 @@ public class turretscript : MonoBehaviour
             canon22 = socket2.transform.position.y;
             currentprojectile2.transform.position = new Vector2(canon2, canon22);
 
-           
+
             rb2.AddForce(-transform.up * speedfire, ForceMode2D.Impulse);
 
 
             firerate = 0;
         }
 
-    }
 
+
+        if (destruction)
+        {
+            timedestruction = timedestruction + 1;
+            rb2d.constraints = RigidbodyConstraints2D.FreezePosition;
+            
+            if (timedestruction >= 50)
+            {
+                Destroy(gameObject);
+
+            }
+
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -89,10 +109,11 @@ public class turretscript : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (collision.gameObject.tag == "friend")
+        if (collision.gameObject.tag == "friend" || collision.gameObject.tag == "missilefriend")
         {
+            anim.SetBool("explosion", true);
+            destruction = true;
             
-            Destroy(gameObject);
         }
     }
 
