@@ -11,6 +11,8 @@ public class turretscript : MonoBehaviour
     bool destruction;
     Rigidbody2D rb2d;
 
+    public float enemislife;
+        
     bool onscreen;
     
     public float speedfire;
@@ -81,7 +83,7 @@ public class turretscript : MonoBehaviour
             timedestruction = timedestruction + 1;
             rb2d.constraints = RigidbodyConstraints2D.FreezePosition;
             
-            if (timedestruction >= 50)
+            if (timedestruction >= 40)
             {
                 Destroy(gameObject);
 
@@ -98,7 +100,7 @@ public class turretscript : MonoBehaviour
         if (collision.gameObject.tag == "onscreen")
 
         {
-            Debug.Log("zizi");
+            //Debug.Log("zizi");
             onscreen = true;
             
 
@@ -111,8 +113,16 @@ public class turretscript : MonoBehaviour
 
         if (collision.gameObject.tag == "friend" || collision.gameObject.tag == "missilefriend")
         {
-            anim.SetBool("explosion", true);
-            destruction = true;
+            enemislife = enemislife - 1;
+
+            if (enemislife <= 0)
+            {
+                anim.SetBool("explosion", true);
+                destruction = true;
+
+            }
+
+           
             
         }
     }
