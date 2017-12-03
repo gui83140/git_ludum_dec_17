@@ -21,6 +21,7 @@ public class turretscript : MonoBehaviour
     public GameObject socket2;
     float canon1; float canon11;
     float canon2; float canon22;
+    bool soundplayed;
 
     public float speedrotato;
     public float speedmove;
@@ -30,12 +31,16 @@ public class turretscript : MonoBehaviour
     float posx;
     float firerate;
     public float truefrirerate;
+    AudioSource audioSource;
+    public AudioClip bite;
 
     void Start()
     {
         firerate = 50;
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
+        soundplayed = true;
     }
 
     // Update is called once per frame
@@ -83,10 +88,11 @@ public class turretscript : MonoBehaviour
         {
             timedestruction = timedestruction + 1;
             rb2d.constraints = RigidbodyConstraints2D.FreezePosition;
-            
+
             if (timedestruction >= 40)
             {
-                Destroy(gameObject);
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                Destroy(gameObject, bite.length);
 
             }
 
@@ -118,7 +124,13 @@ public class turretscript : MonoBehaviour
 
             if (enemislife <= 0)
             {
+                gameObject.GetComponent<PolygonCollider2D>().enabled = false;
                 anim.SetBool("explosion", true);
+                if (soundplayed)
+                {
+                    audioSource.PlayOneShot(bite, 0.7f);
+                    soundplayed = false;
+                }               
                 destruction = true;
 
             }
