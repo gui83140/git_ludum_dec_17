@@ -38,7 +38,7 @@ public class levelup : MonoBehaviour {
         if (collision.gameObject.tag == "friend")
         {
             //riptableObject sn = gameObject.GetComponent<fondmanage>();
-            fondmanage.TAMERE();
+            //fondmanage.TAMERE();
         }
 
 
