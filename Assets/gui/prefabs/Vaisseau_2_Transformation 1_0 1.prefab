@@ -465,15 +465,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ea7b086556cc64888e8e43884a3449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  evolution1: {fileID: 0}
   evolution2: {fileID: 1759142198638506, guid: dde9a68297135b24c9b0fe18eb07508f, type: 2}
-  pubicmaxlife: 100
-  speed: 35
+  evolution3: {fileID: 0}
+  pubicmaxlife: 120
+  speed: 30
   projectile: {fileID: 1544520364990988, guid: 56421a6704222884b82ff731a418f039, type: 2}
   debutprojectile1: {fileID: 1657119053364772}
   debutprojectile2: {fileID: 1609515949468812}
   debutprojectile3: {fileID: 1377859827140782}
   speedlaser: 0.15
-  firerate: 25
+  firerate: 20
 --- !u!212 &212163636149055410
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -360,11 +360,12 @@ MonoBehaviour:
   evolution1: {fileID: 1224948668629528, guid: 00e4fd5732ebcf0458ffac23b3e536cd, type: 2}
   evolution2: {fileID: 0}
   evolution3: {fileID: 0}
-  pubicmaxlife: 100
+  pubicmaxlife: 80
   speed: 35
   projectile: {fileID: 1544520364990988, guid: 56421a6704222884b82ff731a418f039, type: 2}
   debutprojectile1: {fileID: 1421767816771804}
   debutprojectile2: {fileID: 1940927429378250}
+  debutprojectile3: {fileID: 0}
   speedlaser: 0.15
   firerate: 25
 --- !u!114 &114813460074866082

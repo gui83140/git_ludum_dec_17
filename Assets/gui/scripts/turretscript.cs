@@ -29,6 +29,7 @@ public class turretscript : MonoBehaviour
     float posy;
     float posx;
     float firerate;
+    public float truefrirerate;
 
     void Start()
     {
@@ -40,8 +41,8 @@ public class turretscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetBool("fire", false);
-        firerate = firerate + 1;
+        anim.SetBool("fire", false); 
+         firerate = firerate + truefrirerate;
         posy = transform.position.y;
         posx = transform.position.x;
         transform.Rotate(0, 0, speedrotato);
