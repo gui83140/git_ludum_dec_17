@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class levelup : MonoBehaviour {
 
-    public GameObject evolution1;
-    public GameObject evolution2;
-    public GameObject evolution3;
-
-    //public GameObject socket;
-   // public static bool transformous;
 
    private int number;
 
@@ -20,9 +14,7 @@ public class levelup : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //transformous = false;
-        //number = fondmanage.number;
-        number = 0;
+
     }
 	
 	// Update is called once per frame
@@ -38,7 +30,12 @@ public class levelup : MonoBehaviour {
         if (collision.gameObject.tag == "friend")
         {
             //riptableObject sn = gameObject.GetComponent<fondmanage>();
-            fondmanage.TAMERE();
+            var rend = GetComponent<SpriteRenderer>();
+            var box = GetComponent<BoxCollider2D>();
+
+
+            rend.enabled = false;
+            box.enabled = false;
         }
 
 
@@ -60,12 +57,7 @@ public class levelup : MonoBehaviour {
             
             GameObject currentprojectile1 = Instantiate(evolution1);
             currentprojectile1.transform.position = shipcontroller.posi;
-                var rend = GetComponent<SpriteRenderer>();
-                var box = GetComponent<BoxCollider2D>();
-
-
-                rend.enabled = false;
-                box.enabled = false;
+             
             }
 
         if (number == 2)

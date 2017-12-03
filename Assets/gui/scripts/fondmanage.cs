@@ -24,22 +24,7 @@ public class fondmanage : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        transformous = false;
-        //transformous = levelup.transformous;
-
-
-        if (transformous)
-        {
-            
-           // number = number +1;
-
-
-        }
-        transformous = false;
-
-       // Debug.Log(number);
-
-
+       
     }
 
     public static void TAMERE()
@@ -49,12 +34,8 @@ public class fondmanage : MonoBehaviour {
 
         if (number == 1)
         {
-
             GameObject currentprojectile1 = Instantiate(evolution1);
             currentprojectile1.transform.position = shipcontroller.posi;
-
-
-
 
         }
 
@@ -76,4 +57,7 @@ public class fondmanage : MonoBehaviour {
         }
         Debug.Log("chiotte");
     }
+
+    void ChangeVaiss() { 
+}
 }
