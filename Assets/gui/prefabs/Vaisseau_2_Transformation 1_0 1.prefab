@@ -465,6 +465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ea7b086556cc64888e8e43884a3449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  evolution2: {fileID: 1759142198638506, guid: dde9a68297135b24c9b0fe18eb07508f, type: 2}
   pubicmaxlife: 100
   speed: 35
   projectile: {fileID: 1544520364990988, guid: 56421a6704222884b82ff731a418f039, type: 2}

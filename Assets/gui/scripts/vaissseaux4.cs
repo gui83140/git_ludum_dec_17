@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class vaissseau3 : MonoBehaviour {
-
-    public GameObject evolution3;
+public class vaissseaux4 : MonoBehaviour {
 
     public static float actuallife2;
     public static float maxlife2;
@@ -28,11 +26,15 @@ public class vaissseau3 : MonoBehaviour {
     public GameObject debutprojectile2;
     public GameObject debutprojectile3;
     public GameObject debutprojectile4;
+    public GameObject debutprojectile5;
+    public GameObject debutprojectile6;
     float canon1; float canon11;
     float canon2; float canon22;
     float canon3; float canon33;
     float canon4; float canon44;
-    
+    float canon5; float canon55;
+    float canon6; float canon66;
+
 
     public float speedlaser;
 
@@ -115,12 +117,12 @@ public class vaissseau3 : MonoBehaviour {
             canon3 = debutprojectile3.transform.position.x;
             canon33 = debutprojectile3.transform.position.y;
             currentprojectile3.transform.position = new Vector2(canon3, canon33);
-            currentprojectile3.transform.Rotate(0, 0, -45);
+            currentprojectile3.transform.Rotate(0, 0, 45);
             //shooted = true;
             // Vector2 haut3 = new Vector2(canon3, 250f);
             //rb3.AddForce(haut3 * speedlaser, ForceMode2D.Impulse);
             //rb3.AddForce(transform.up * speedlaser, ForceMode2D.Impulse);
-            rb3.AddForce(transform.up * speedlaser / 2 + (transform.right * speedlaser / 2), ForceMode2D.Impulse);
+            rb3.AddForce(transform.up * speedlaser / 2 + (-transform.right * speedlaser / 2), ForceMode2D.Impulse);
 
 
             GameObject currentprojectile4 = Instantiate(projectile);
@@ -128,14 +130,44 @@ public class vaissseau3 : MonoBehaviour {
             canon4 = debutprojectile4.transform.position.x;
             canon44 = debutprojectile4.transform.position.y;
             currentprojectile4.transform.position = new Vector2(canon4, canon44);
-            currentprojectile4.transform.Rotate(0,0,45);
+            currentprojectile4.transform.Rotate(0, 0, -45);
 
-            
+
 
             //shooted = true;
             // Vector2 haut3 = new Vector2(canon3, 250f);
             //rb3.AddForce(haut3 * speedlaser, ForceMode2D.Impulse);
-            rb4.AddForce(transform.up * speedlaser/2 + (-transform.right *speedlaser/2), ForceMode2D.Impulse);
+            rb4.AddForce(transform.up * speedlaser / 2 + (transform.right * speedlaser / 2), ForceMode2D.Impulse);
+
+
+
+
+            GameObject currentprojectile5 = Instantiate(projectile);
+            Rigidbody2D rb5 = currentprojectile5.GetComponent<Rigidbody2D>();
+            canon5 = debutprojectile5.transform.position.x;
+            canon55 = debutprojectile5.transform.position.y;
+            currentprojectile5.transform.position = new Vector2(canon5, canon55);
+            currentprojectile5.transform.Rotate(0, 0, 45);
+            //shooted = true;
+            // Vector2 haut3 = new Vector2(canon3, 250f);
+            //rb3.AddForce(haut3 * speedlaser, ForceMode2D.Impulse);
+            //rb3.AddForce(transform.up * speedlaser, ForceMode2D.Impulse);
+            rb5.AddForce(transform.up * speedlaser / 2 + (-transform.right * speedlaser / 2), ForceMode2D.Impulse);
+
+
+            GameObject currentprojectile6 = Instantiate(projectile);
+            Rigidbody2D rb6 = currentprojectile6.GetComponent<Rigidbody2D>();
+            canon6 = debutprojectile6.transform.position.x;
+            canon66 = debutprojectile6.transform.position.y;
+            currentprojectile6.transform.position = new Vector2(canon6, canon66);
+            currentprojectile6.transform.Rotate(0, 0, -45);
+
+
+
+            //shooted = true;
+            // Vector2 haut3 = new Vector2(canon3, 250f);
+            //rb3.AddForce(haut3 * speedlaser, ForceMode2D.Impulse);
+            rb6.AddForce(transform.up * speedlaser / 2 + (transform.right * speedlaser / 2), ForceMode2D.Impulse);
 
 
 
@@ -177,7 +209,7 @@ public class vaissseau3 : MonoBehaviour {
         {
 
             actuallife2 = actuallife2 - 10f;
-            
+           
             // barredevie.healtbarre = barredevie.healtbarre - 10;
             //Instantiate(destruction);
 
@@ -196,13 +228,10 @@ public class vaissseau3 : MonoBehaviour {
 
         if (collision.gameObject.tag == "levelup")
         {
+            Debug.Log("joie");
 
-            GameObject la = Instantiate(evolution3);
-            la.transform.position = posi;
-            
-            
             //Debug.Log("bite");
-            Destroy(gameObject);
+            // Destroy(gameObject);
         }
 
         if (collision.gameObject.tag == "enemis")

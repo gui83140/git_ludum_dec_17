@@ -29,17 +29,16 @@ public class levelup : MonoBehaviour {
     {
         if (collision.gameObject.tag == "friend")
         {
+
+            Destroy(gameObject);
+            //var rend = GetComponent<SpriteRenderer>();
+            //var box = GetComponent<BoxCollider2D>();
+
+
+            //rend.enabled = false;
+            //box.enabled = false;
             //riptableObject sn = gameObject.GetComponent<fondmanage>();
-<<<<<<< HEAD
-            var rend = GetComponent<SpriteRenderer>();
-            var box = GetComponent<BoxCollider2D>();
 
-
-            rend.enabled = false;
-            box.enabled = false;
-=======
-            //fondmanage.TAMERE();
->>>>>>> 8c972737f35cf614d4fb722e4e709b321f021663
         }
 
 

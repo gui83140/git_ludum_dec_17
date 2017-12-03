@@ -44,6 +44,11 @@ public class healthpick : MonoBehaviour {
         {
             shipcontroller.actuallife = shipcontroller.actuallife +50;
             shipcontroller2.actuallife2 = shipcontroller2.actuallife2 + 50;
+            vaissseau3.actuallife2 = vaissseau3.actuallife2 + 50;
+            vaissseaux4.actuallife2 = vaissseaux4.actuallife2 + 50;
+    
+
+
             Destroy(gameObject);
 
         }

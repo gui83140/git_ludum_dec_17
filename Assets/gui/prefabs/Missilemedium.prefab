@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50192375197624628}
   - component: {fileID: 61810395047912258}
   m_Layer: 0
-  m_Name: Missile
+  m_Name: Missilemedium
   m_TagString: missilefriend
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1544520364990988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.32, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
