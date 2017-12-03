@@ -28,7 +28,7 @@ public class evolution1 : MonoBehaviour
         if (collision.gameObject.tag == "friend")
         {
             GameObject currentprojectile1 = Instantiate(revolution1);
-            currentprojectile1.transform.position = shipcontroller.posi;
+           // currentprojectile1.transform.position = shipcontroller.posi;
 
             Destroy(gameObject);
 
