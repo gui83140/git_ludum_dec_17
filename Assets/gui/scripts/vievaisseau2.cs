@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class barredevie : MonoBehaviour {
+public class vievaisseau2 : MonoBehaviour {
 
     Image greenlife;
      float healtbarre;
@@ -13,7 +13,7 @@ public class barredevie : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        healtbarre = shipcontroller.maxlife;
+        healtbarre = shipcontroller2.maxlife2;
        
         greenlife = GetComponent<Image>();
 
@@ -23,8 +23,10 @@ public class barredevie : MonoBehaviour {
 	void Update () {
         //transform.position = (following.transform.position + new Vector2(0,10));
         transform.position = new Vector3(following.transform.position.x, following.transform.position.y-1, 0);
-        healtbarre = shipcontroller.actuallife;
-        maxhealtbarre = shipcontroller.maxlife;
+        healtbarre = shipcontroller2.actuallife2;
+        //healtbarre = healtbarre - 1;
+
+        maxhealtbarre = shipcontroller2.maxlife2;
         greenlife.fillAmount = healtbarre / maxhealtbarre;
         //Debug.Log(greenlife.fillAmount);
 

@@ -1,11 +1,15 @@
 fileFormatVersion: 2
-guid: 896b16b27d53f7e459f01135f2987a13
-timeCreated: 1512277092
+guid: be5d6b7323c21794cb342b50000e023a
+timeCreated: 1512289475
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Vaisseau_2_Idle 1_0
-    21300002: Vaisseau_2_Idle 1_1
+    21300000: Vaisseau_3_Transform 1_0
+    21300002: Vaisseau_3_Transform 1_1
+    21300004: Vaisseau_3_Transform 1_2
+    21300006: Vaisseau_3_Transform 1_3
+    21300008: Vaisseau_3_Transform 1_4
+    21300010: Vaisseau_3_Transform 1_5
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -80,7 +84,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Vaisseau_2_Idle 1_0
+      name: Vaisseau_3_Transform 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -94,10 +98,66 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Vaisseau_2_Idle 1_1
+      name: Vaisseau_3_Transform 1_1
       rect:
         serializedVersion: 2
         x: 1024
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Vaisseau_3_Transform 1_2
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Vaisseau_3_Transform 1_3
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Vaisseau_3_Transform 1_4
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Vaisseau_3_Transform 1_5
+      rect:
+        serializedVersion: 2
+        x: 5120
         y: 0
         width: 1024
         height: 1024

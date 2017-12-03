@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 896b16b27d53f7e459f01135f2987a13
-timeCreated: 1512277092
+guid: aedd6e431fcdb534bb21dc3393e5c593
+timeCreated: 1512277232
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Vaisseau_2_Idle 1_0
-    21300002: Vaisseau_2_Idle 1_1
+    21300000: Vaisseau_2_Moove 1_0
+    21300002: Vaisseau_2_Moove 1_1
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -80,7 +80,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Vaisseau_2_Idle 1_0
+      name: Vaisseau_2_Moove 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -94,7 +94,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Vaisseau_2_Idle 1_1
+      name: Vaisseau_2_Moove 1_1
       rect:
         serializedVersion: 2
         x: 1024

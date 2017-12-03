@@ -2,33 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shipcontroller : MonoBehaviour
-{
-    /* marche avec position
-    public float speedmvt;
-    float posy;
-    float posx;
-    Vector2 mvt;
-    Rigidbody2D rb;
-    */
+public class shipcontroller2 : MonoBehaviour {
 
-    /* marche avec adforce
-    float movehorizon;
-    float moveverti;
-    Vector2 mvt;
-    Rigidbody2D rb2d;
-    public float speed;
-    */
-
-    //public bool shooted;
-
-
-    
-
-    public  static float actuallife;
-    public  static float maxlife;
+    public  static float actuallife2;
+    public  static float maxlife2;
     public static Vector3 posi;
-
 
     public float pubicmaxlife;
 
@@ -46,10 +24,10 @@ public class shipcontroller : MonoBehaviour
     public GameObject projectile;
     public GameObject debutprojectile1;
     public GameObject debutprojectile2;
-    
+    public GameObject debutprojectile3;
     float canon1; float canon11;
     float canon2; float canon22;
-
+    float canon3; float canon33;
 
     public float speedlaser;
 
@@ -60,10 +38,10 @@ public class shipcontroller : MonoBehaviour
 
     void Start()
     {
-        maxlife = pubicmaxlife;
+        maxlife2 = pubicmaxlife;
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        actuallife = maxlife;
+        actuallife2 = maxlife2;
     }
 
 
@@ -91,10 +69,10 @@ public class shipcontroller : MonoBehaviour
         mvt = new Vector2(movehorizon * speed, moveverti * speed);
         rb2d.velocity = mvt;
 
-        posi = transform.position ;
+        posi = transform.position;
 
 
-        
+
 
 
 
@@ -110,7 +88,7 @@ public class shipcontroller : MonoBehaviour
             canon1 = debutprojectile1.transform.position.x;
             canon11 = debutprojectile1.transform.position.y;
             currentprojectile1.transform.position = new Vector2(canon1, canon11);
-           // shooted = true;
+            // shooted = true;
             Vector2 haut1 = new Vector2(canon1, 250f);
             rb1.AddForce(haut1 * speedlaser, ForceMode2D.Impulse);
 
@@ -125,6 +103,14 @@ public class shipcontroller : MonoBehaviour
 
 
 
+            GameObject currentprojectile3 = Instantiate(projectile);
+            Rigidbody2D rb3 = currentprojectile3.GetComponent<Rigidbody2D>();
+            canon3 = debutprojectile3.transform.position.x;
+            canon33 = debutprojectile3.transform.position.y;
+            currentprojectile3.transform.position = new Vector2(canon3, canon33);
+            //shooted = true;
+            Vector2 haut3 = new Vector2(canon3, 250f);
+            rb3.AddForce(haut3 * speedlaser, ForceMode2D.Impulse);
 
             countime = 0;
 
@@ -153,7 +139,7 @@ public class shipcontroller : MonoBehaviour
 
         }
 
-       
+
     }
 
     //destruction vaisseau
@@ -163,12 +149,12 @@ public class shipcontroller : MonoBehaviour
         if (collision.gameObject.tag == "enemisfire")
         {
 
-            actuallife = actuallife - 10f;
-
-           // barredevie.healtbarre = barredevie.healtbarre - 10;
+            actuallife2 = actuallife2 - 10f;
+            //Debug.Log("yaya");
+            // barredevie.healtbarre = barredevie.healtbarre - 10;
             //Instantiate(destruction);
 
-            if (actuallife <= 0)
+            if (actuallife2 <= 0)
             {
 
 
@@ -183,15 +169,15 @@ public class shipcontroller : MonoBehaviour
 
         if (collision.gameObject.tag == "levelup")
         {
-           // Debug.Log("bite");
+            //Debug.Log("bite");
             Destroy(gameObject);
         }
 
         if (collision.gameObject.tag == "enemis")
         {
 
-            actuallife = actuallife - 100f;
-            if (actuallife <= 0)
+            actuallife2 = actuallife2 - 100f;
+            if (actuallife2 <= 0)
             {
 
 
@@ -199,19 +185,7 @@ public class shipcontroller : MonoBehaviour
                 anim.SetBool("explosion", true);
                 destruction = true;
             }
-            
+
         }
     }
 }
-
-
-
-    
-
-
-        
-
-    
-
-   
-
