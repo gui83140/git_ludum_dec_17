@@ -217,7 +217,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!60 &60138139837984236
 PolygonCollider2D:
@@ -400,6 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df9c352153db218409b18879a3cc7e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  evolution3: {fileID: 1267631427645662, guid: fa6558d51210e7f4597a9c6d510f05a3, type: 2}
   pubicmaxlife: 100
   speed: 35
   projectile: {fileID: 1544520364990988, guid: 56421a6704222884b82ff731a418f039, type: 2}

@@ -8,6 +8,8 @@ public class shipcontroller2 : MonoBehaviour {
     public  static float maxlife2;
     public static Vector3 posi;
 
+    public GameObject evolution2;
+
     public float pubicmaxlife;
 
     bool destruction;
@@ -169,8 +171,11 @@ public class shipcontroller2 : MonoBehaviour {
 
         if (collision.gameObject.tag == "levelup")
         {
-            //Debug.Log("bite");
-            Destroy(gameObject);
+
+            GameObject la = Instantiate(evolution2);
+            la.transform.position = posi;
+            Destroy(this.gameObject);
+            
         }
 
         if (collision.gameObject.tag == "enemis")
