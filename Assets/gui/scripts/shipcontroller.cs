@@ -109,14 +109,7 @@ public class shipcontroller : MonoBehaviour
 
 
 
-            GameObject currentprojectile3 = Instantiate(projectile);
-            Rigidbody2D rb3 = currentprojectile3.GetComponent<Rigidbody2D>();
-            canon3 = debutprojectile3.transform.position.x;
-            canon33 = debutprojectile3.transform.position.y;
-            currentprojectile3.transform.position = new Vector2(canon3, canon33);
-            //shooted = true;
-            Vector2 haut3 = new Vector2(canon3, 250f);
-            rb3.AddForce(haut3 * speedlaser, ForceMode2D.Impulse);
+           
 
             countime = 0;
 
