@@ -473,11 +473,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66e09eae8d69f45418152f20507173a8, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &569495557 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1593488074801322, guid: 66e09eae8d69f45418152f20507173a8,
-    type: 2}
-  m_PrefabInternal: {fileID: 1581774764}
 --- !u!1 &612013928
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d07e0d89aaaf5642b79866cb6e116ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evolution: {fileID: 569495557}
+  evolution: {fileID: 1912979580161222, guid: 5dbbefefe9317bb47b42744c7495869e, type: 2}
   socket: {fileID: 57856679}
   speed: 0.05
 --- !u!61 &933284137

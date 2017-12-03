@@ -27,7 +27,7 @@ public class levelup : MonoBehaviour {
 
         if (collision.gameObject.tag == "friend")
         {
-            Instantiate(evolution);
+           // Instantiate(evolution);
             GameObject currentprojectile2 = Instantiate(evolution);
             Rigidbody2D rb2 = currentprojectile2.GetComponent<Rigidbody2D>();
             float posx = socket.transform.position.x;
