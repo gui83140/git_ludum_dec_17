@@ -9,12 +9,29 @@ public class levelup : MonoBehaviour {
 
     Vector3 mvt;
     public float speed;
-    
-    
+    public AudioClip[] Clips;
+    private AudioSource[] audioSources;
+    public float Volume1, Volume0;
+
+
+
 
     // Use this for initialization
     void Start () {
+        audioSources = new AudioSource[Clips.Length];
+        int i = 0;
+        while (i < Clips.Length)
+        {
+            GameObject child = new GameObject("Player");
 
+            child.transform.parent = gameObject.transform;
+
+            audioSources[i] = child.AddComponent<AudioSource>() as AudioSource;
+
+            audioSources[i].clip = Clips[i];
+
+            i++;
+        }
     }
 	
 	// Update is called once per frame
@@ -29,14 +46,18 @@ public class levelup : MonoBehaviour {
     {
         if (collision.gameObject.tag == "friend")
         {
+            audioSources[0].volume = Volume0;
+            audioSources[0].Play();
+            audioSources[1].volume = Volume1;
+            audioSources[1].Play();
 
-            Destroy(gameObject);
-            //var rend = GetComponent<SpriteRenderer>();
-            //var box = GetComponent<BoxCollider2D>();
+            var rend = GetComponent<SpriteRenderer>();
+            var box = GetComponent<BoxCollider2D>();
 
 
-            //rend.enabled = false;
-            //box.enabled = false;
+            rend.enabled = false;
+            box.enabled = false;
+            Destroy(gameObject, 2f);
             //riptableObject sn = gameObject.GetComponent<fondmanage>();
 
         }

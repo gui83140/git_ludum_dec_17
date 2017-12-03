@@ -244,7 +244,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.495
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -348,7 +348,7 @@ MonoBehaviour:
   socket2: {fileID: 1589202954802526}
   speedrotato: 1.5
   speedmove: 0.05
-  truefrirerate: 0
+  truefrirerate: 1.5
   bite: {fileID: 8300000, guid: 6c21bb2634ea44341a98da5f77968785, type: 3}
 --- !u!212 &212538021827612178
 SpriteRenderer:

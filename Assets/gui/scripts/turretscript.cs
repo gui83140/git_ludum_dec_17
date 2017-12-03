@@ -92,7 +92,7 @@ public class turretscript : MonoBehaviour
             if (timedestruction >= 40)
             {
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                Destroy(gameObject, bite.length);
+                Destroy(gameObject);
 
             }
 
@@ -124,19 +124,16 @@ public class turretscript : MonoBehaviour
 
             if (enemislife <= 0)
             {
-                gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+                gameObject.GetComponent<PolygonCollider2D>().enabled = false;               
                 anim.SetBool("explosion", true);
                 if (soundplayed)
                 {
                     audioSource.PlayOneShot(bite, 0.7f);
+                    audioSource.pitch = (Random.Range(0.4f, 0.9f));
                     soundplayed = false;
-                }               
-                destruction = true;
-
-            }
-
-           
-            
+                    destruction = true;
+                }          
+            }          
         }
     }
 

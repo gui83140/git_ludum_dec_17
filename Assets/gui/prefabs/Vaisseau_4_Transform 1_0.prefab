@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 60645575989897394}
   - component: {fileID: 50160462889650226}
   - component: {fileID: 114188287251692888}
+  - component: {fileID: 82223334983220942}
   m_Layer: 0
   m_Name: Vaisseau_4_Transform 1_0
   m_TagString: friend
@@ -500,6 +501,86 @@ PolygonCollider2D:
       - {x: 0.65, y: 0.13}
       - {x: 0.65, y: 0.11}
       - {x: 0.63, y: 0.11}
+--- !u!82 &82223334983220942
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1267631427645662}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: dc7895d6d42b98e4d8031be375e0bf2e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.243
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95465403451122340
 Animator:
   serializedVersion: 3
@@ -613,8 +694,13 @@ MonoBehaviour:
   debutprojectile4: {fileID: 1805270585321134}
   debutprojectile5: {fileID: 1459304084384184}
   debutprojectile6: {fileID: 1099772799440384}
+  Clips:
+  - {fileID: 8300000, guid: dc7895d6d42b98e4d8031be375e0bf2e, type: 3}
+  - {fileID: 8300000, guid: 36a00d70e7f06354db7c686b1d811a64, type: 3}
+  Volume0: 0.243
+  Volume1: 0.3
   speedlaser: 20
-  firerate: 0.25
+  firerate: 0.5
 --- !u!114 &114375850324093534
 MonoBehaviour:
   m_ObjectHideFlags: 1

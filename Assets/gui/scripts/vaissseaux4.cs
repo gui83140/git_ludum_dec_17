@@ -34,6 +34,10 @@ public class vaissseaux4 : MonoBehaviour {
     float canon4; float canon44;
     float canon5; float canon55;
     float canon6; float canon66;
+    public AudioClip[] Clips;
+    private AudioSource[] audioSources;
+    public float Volume0, Volume1;
+
 
 
     public float speedlaser;
@@ -49,6 +53,22 @@ public class vaissseaux4 : MonoBehaviour {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         actuallife2 = maxlife2;
+        audioSources = new AudioSource[Clips.Length];
+        int i = 0;
+        while (i < Clips.Length)
+        {
+            GameObject child = new GameObject("Player");
+
+            child.transform.parent = gameObject.transform;
+
+            audioSources[i] = child.AddComponent<AudioSource>() as AudioSource;
+
+            audioSources[i].clip = Clips[i];
+
+            i++;
+        }
+        audioSources[0].volume = Volume0;
+        audioSources[1].volume = Volume1;
     }
 
 
@@ -90,6 +110,7 @@ public class vaissseaux4 : MonoBehaviour {
         // projectile
         if ((Input.GetMouseButton(0) || Input.GetButton("Jump")) && countime >= firerate && destruction == false)
         {
+            audioSources[0].Play();
             GameObject currentprojectile1 = Instantiate(projectile);
             Rigidbody2D rb1 = currentprojectile1.GetComponent<Rigidbody2D>();
             canon1 = debutprojectile1.transform.position.x;
@@ -190,10 +211,10 @@ public class vaissseaux4 : MonoBehaviour {
         {
             timedestruction = timedestruction + 1;
             rb2d.constraints = RigidbodyConstraints2D.FreezePosition;
-            if (timedestruction >= 60)
+            if (timedestruction >= 40)
             {
                 Destroy(gameObject);
-
+                FindObjectOfType<GameManager>().EndGame();
             }
 
         }
@@ -242,7 +263,7 @@ public class vaissseaux4 : MonoBehaviour {
             {
 
 
-
+                audioSources[1].Play();
                 anim.SetBool("explosion", true);
                 destruction = true;
             }
