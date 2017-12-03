@@ -401,15 +401,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evolution3: {fileID: 1267631427645662, guid: fa6558d51210e7f4597a9c6d510f05a3, type: 2}
-  pubicmaxlife: 100
-  speed: 35
-  projectile: {fileID: 1544520364990988, guid: 56421a6704222884b82ff731a418f039, type: 2}
+  pubicmaxlife: 160
+  speed: 25
+  projectile: {fileID: 1544520364990988, guid: 7e89fd5239b268045a288ef6f8057d5c, type: 2}
   debutprojectile1: {fileID: 1676102313714550}
   debutprojectile2: {fileID: 1435998593185054}
   debutprojectile3: {fileID: 1812923333878554}
   debutprojectile4: {fileID: 1786800507275880}
   speedlaser: 20
-  firerate: 25
+  firerate: 15
 --- !u!114 &114361346730771960
 MonoBehaviour:
   m_ObjectHideFlags: 1

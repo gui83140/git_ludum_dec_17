@@ -87,7 +87,7 @@ public class shipcontroller : MonoBehaviour
 
 
         // projectile
-        if (Input.GetMouseButton(0) && countime >= firerate && destruction == false)
+        if ((Input.GetMouseButton(0)|| Input.GetButton("Jump")) && countime >= firerate && destruction == false)
         {
             GameObject currentprojectile1 = Instantiate(projectile);
             Rigidbody2D rb1 = currentprojectile1.GetComponent<Rigidbody2D>();
