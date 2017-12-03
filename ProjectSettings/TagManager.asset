@@ -11,6 +11,7 @@ TagManager:
   - enemisfire
   - missilefriend
   - levelup
+  - flumissile
   layers:
   - Default
   - TransparentFX
