@@ -350,6 +350,9 @@ MonoBehaviour:
   speedmove: 0.05
   truefrirerate: 1.5
   bite: {fileID: 8300000, guid: 6c21bb2634ea44341a98da5f77968785, type: 3}
+  colors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &212229580494066318
 SpriteRenderer:
   m_ObjectHideFlags: 1

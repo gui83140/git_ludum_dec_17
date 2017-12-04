@@ -151,12 +151,12 @@ public class shipcontroller : MonoBehaviour
 
         if (destruction)
         {
+            FindObjectOfType<GameManager>().EndGame();
             timedestruction = timedestruction + 1;
             rb2d.constraints = RigidbodyConstraints2D.FreezePosition;
             if (timedestruction >= 40)
             {
                 Destroy(gameObject);
-                FindObjectOfType<GameManager>().EndGame();
 
             }
 

@@ -37,8 +37,6 @@ public class levelup : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        
-        transform.Rotate(0, 2, 0);
         transform.position = new Vector3(transform.position.x, transform.position.y - 1 * speed, 0);
     }
 

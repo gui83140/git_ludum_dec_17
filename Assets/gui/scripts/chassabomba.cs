@@ -40,6 +40,11 @@ public class chassabomba : MonoBehaviour {
 
     public float speedY;
     public float speedX;
+    AudioSource audioSource;
+    public AudioClip bite;
+    bool soundplayed;
+    Renderer renderers;
+    public Color[] colors;
 
     private Animator anim;
 
@@ -51,6 +56,9 @@ public class chassabomba : MonoBehaviour {
         firerate1 = 0;
         firerate2 = 0;
         firerate3 = 0;
+        audioSource = GetComponent<AudioSource>();
+        soundplayed = true;
+        renderers = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -236,7 +244,7 @@ public class chassabomba : MonoBehaviour {
 
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
 
 
@@ -257,16 +265,20 @@ public class chassabomba : MonoBehaviour {
 
         if (collision.gameObject.tag == "friend" || collision.gameObject.tag == "missilefriend")
         {
+            StartCoroutine(Flick());
             enemislife = enemislife - 1;
             
             if (enemislife <= 0)
             {
                 anim.SetBool("explosion", true);
-                
-                destruction = true;
-
-                
-
+                gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+                if (soundplayed)
+                {
+                    audioSource.PlayOneShot(bite, 0.7f);
+                    audioSource.pitch = (Random.Range(0.4f, 0.9f));
+                    soundplayed = false;
+                    destruction = true;
+                }
             }
 
 
@@ -275,16 +287,20 @@ public class chassabomba : MonoBehaviour {
 
         if (collision.gameObject.tag == "flumissile")
         {
+            StartCoroutine(Flick());
             enemislife = enemislife - 0.05f;
             Debug.Log(enemislife);
             if (enemislife <= 0)
             {
                 anim.SetBool("explosion", true);
-
-                destruction = true;
-
-
-
+                gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+                if (soundplayed)
+                {
+                    audioSource.PlayOneShot(bite, 0.7f);
+                    audioSource.pitch = (Random.Range(0.4f, 0.9f));
+                    soundplayed = false;
+                    destruction = true;
+                }
             }
 
 
@@ -292,4 +308,11 @@ public class chassabomba : MonoBehaviour {
         }
     }
 
+    IEnumerator Flick()
+    {
+        renderers.material.color = colors[0];
+        yield return new WaitForSeconds(.1f);
+        renderers.material.color = colors[1];
+
+    }     
 }

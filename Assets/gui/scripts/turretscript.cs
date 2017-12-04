@@ -33,6 +33,8 @@ public class turretscript : MonoBehaviour
     public float truefrirerate;
     AudioSource audioSource;
     public AudioClip bite;
+    Renderer renderers;
+    public Color[] colors;
 
     void Start()
     {
@@ -41,6 +43,7 @@ public class turretscript : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
         soundplayed = true;
+        renderers = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -120,6 +123,7 @@ public class turretscript : MonoBehaviour
 
         if (collision.gameObject.tag == "friend" || collision.gameObject.tag == "missilefriend")
         {
+            StartCoroutine(Flick());
             enemislife = enemislife - 1;
 
             if (enemislife <= 0)
@@ -135,7 +139,32 @@ public class turretscript : MonoBehaviour
                 }          
             }          
         }
+
+        if (collision.gameObject.tag == "flumissile")
+        {
+            enemislife = enemislife - .1f;
+
+            if (enemislife <= 0)
+            {
+                gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+                anim.SetBool("explosion", true);
+                if (soundplayed)
+                {
+                    audioSource.PlayOneShot(bite, 0.7f);
+                    audioSource.pitch = (Random.Range(0.4f, 0.9f));
+                    soundplayed = false;
+                    destruction = true;
+                }
+            }
+        }
     }
 
-   
+    IEnumerator Flick()
+    {
+        renderers.material.color = colors[0];
+        yield return new WaitForSeconds(.1f);
+        renderers.material.color = colors[1];
+
+    }
+
 }

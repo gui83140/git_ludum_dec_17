@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114254214478049468}
   - component: {fileID: 61902585758032754}
   - component: {fileID: 82219830301813300}
+  - component: {fileID: 95499927929194872}
   m_Layer: 0
   m_Name: leveluppickup
   m_TagString: levelup
@@ -65,8 +66,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1272419032644576}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.583635, y: 153.22537, z: 0.22077943}
-  m_LocalScale: {x: 0.22498435, y: 0.22498435, z: 0.22498435}
+  m_LocalPosition: {x: 6.348, y: 3.401, z: 0.44155887}
+  m_LocalScale: {x: 0.11205538, y: 0.11205538, z: 0.11205538}
   m_Children:
   - {fileID: 4837990742243176}
   m_Father: {fileID: 0}
@@ -177,6 +178,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95499927929194872
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1272419032644576}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f1552265f44117a4092e5faaa8ea2256, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114254214478049468
 MonoBehaviour:
   m_ObjectHideFlags: 1
