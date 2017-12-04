@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class vaissseaux4 : MonoBehaviour {
+public class vaissseaux4 : MonoBehaviour
+{
 
     public static float actuallife2;
     public static float maxlife2;
@@ -215,7 +216,7 @@ public class vaissseaux4 : MonoBehaviour {
             if (timedestruction >= 40)
             {
                 Destroy(gameObject);
-      
+
             }
 
         }
@@ -231,7 +232,7 @@ public class vaissseaux4 : MonoBehaviour {
         {
 
             actuallife2 = actuallife2 - 10f;
-           
+
             // barredevie.healtbarre = barredevie.healtbarre - 10;
             //Instantiate(destruction);
 
@@ -259,6 +260,24 @@ public class vaissseaux4 : MonoBehaviour {
         if (collision.gameObject.tag == "enemis")
         {
 
+            actuallife2 = actuallife2 - 50f;
+            if (actuallife2 <= 0)
+            {
+
+
+                audioSources[1].Play();
+                anim.SetBool("explosion", true);
+                destruction = true;
+            }
+
+
+
+            
+        }
+
+        if (collision.gameObject.tag == "bigenemis")
+        {
+
             actuallife2 = actuallife2 - 10000f;
             if (actuallife2 <= 0)
             {
@@ -269,6 +288,37 @@ public class vaissseaux4 : MonoBehaviour {
                 destruction = true;
             }
 
+
+
         }
+
+        if (collision.gameObject.tag == "Laser")
+        {
+
+            actuallife2 = actuallife2 - 1000f;
+            if (actuallife2 <= 0)
+            {
+
+                audioSources[1].Play();
+                anim.SetBool("explosion", true);
+                destruction = true;
+            }
+
+        }
+
+        if (collision.gameObject.tag == "BoxBoss")
+        {
+
+            actuallife2 = actuallife2 - 1000f;
+            if (actuallife2 <= 0)
+            {
+
+                audioSources[1].Play();
+                anim.SetBool("explosion", true);
+                destruction = true;
+            }
+
+        }
+
     }
 }

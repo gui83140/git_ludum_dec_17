@@ -22,12 +22,12 @@ GameObject:
   - component: {fileID: 212229580494066318}
   - component: {fileID: 95114231249276368}
   - component: {fileID: 61583189957402714}
-  - component: {fileID: 114322733830722586}
   - component: {fileID: 50862361734765220}
   - component: {fileID: 60058675832164292}
   - component: {fileID: 82415301523469364}
+  - component: {fileID: 114696921599458216}
   m_Layer: 0
-  m_Name: turrets
+  m_Name: turrets boss
   m_TagString: enemis
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1593488074801322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.08, y: 47.03, z: 0}
+  m_LocalPosition: {x: -2.1, y: 6.5, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 4115078957860134}
@@ -330,7 +330,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114322733830722586
+--- !u!114 &114696921599458216
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -338,21 +338,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1593488074801322}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1a74512bee6d2742b5c39155b2e8954, type: 3}
+  m_Script: {fileID: 11500000, guid: f4006b1001f50804ca971db9fdc5eea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemislife: 4
-  speedfire: 4
+  enemislife: 50
+  speedfire: 10
   projectile: {fileID: 1847533376513320, guid: d969d134237ebd44283ab81aa5b9a566, type: 2}
   socket1: {fileID: 1817749505032916}
   socket2: {fileID: 1629576416328812}
-  speedrotato: 1.5
-  speedmove: 0.05
+  speedrotato: 1
+  speedmove: 0
   truefrirerate: 1.5
-  bite: {fileID: 8300000, guid: 6c21bb2634ea44341a98da5f77968785, type: 3}
-  colors:
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
+  bite: {fileID: 0}
+  colors: []
 --- !u!212 &212229580494066318
 SpriteRenderer:
   m_ObjectHideFlags: 1

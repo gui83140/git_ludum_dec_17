@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class turretscript : MonoBehaviour
-{
+public class scipturelboss : MonoBehaviour {
 
-
-
+    public float gastonencule;
     float timedestruction;
     bool destruction;
     Rigidbody2D rb2d;
 
     public float enemislife;
-        
+
     bool onscreen;
-    
+
     public float speedfire;
     public GameObject projectile;
     public GameObject socket1;
@@ -35,6 +33,7 @@ public class turretscript : MonoBehaviour
     public AudioClip bite;
     Renderer renderers;
     public Color[] colors;
+    bool couille;
 
     void Start()
     {
@@ -44,17 +43,18 @@ public class turretscript : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         soundplayed = true;
         renderers = GetComponent<SpriteRenderer>();
+        couille = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        anim.SetBool("fire", false); 
-         firerate = firerate + truefrirerate;
-        posy = transform.position.y;
-        posx = transform.position.x;
+        anim.SetBool("fire", false);
+        firerate = firerate + truefrirerate;
+        //posy = transform.position.y;
+        //posx = transform.position.x;
         transform.Rotate(0, 0, speedrotato);
-        transform.position = new Vector2(posx, posy - speedmove);
+        //transform.position = new Vector2(posx, posy - speedmove);
 
         if (firerate >= 50 && onscreen == true && destruction == false)
         {
@@ -105,14 +105,14 @@ public class turretscript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-       
+
         //Transform.Destroy(this);
         if (collision.gameObject.tag == "onscreen")
 
         {
             //Debug.Log("zizi");
             onscreen = true;
-            
+
 
         }
 
@@ -121,29 +121,10 @@ public class turretscript : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if ( collision.gameObject.tag == "missilefriend")
+        if (collision.gameObject.tag == "missilefriend")
         {
             StartCoroutine(Flick());
             enemislife = enemislife - 1;
-
-            if (enemislife <= 0)
-            {
-                gameObject.GetComponent<PolygonCollider2D>().enabled = false;               
-                anim.SetBool("explosion", true);
-                if (soundplayed)
-                {
-                    audioSource.PlayOneShot(bite, 0.7f);
-                    audioSource.pitch = (Random.Range(0.4f, 0.9f));
-                    soundplayed = false;
-                    destruction = true;
-                }          
-            }          
-        }
-
-        if (collision.gameObject.tag == "friend" )
-        {
-            StartCoroutine(Flick());
-            enemislife = enemislife - 1000;
 
             if (enemislife <= 0)
             {
@@ -159,21 +140,35 @@ public class turretscript : MonoBehaviour
             }
         }
 
+        if (collision.gameObject.tag == "friend")
+        {
+            StartCoroutine(Flick());
+            enemislife = enemislife - 1000;        
+        }
+
         if (collision.gameObject.tag == "flumissile")
         {
             enemislife = enemislife - .1f;
-
-            if (enemislife <= 0)
+            if (couille)
             {
-                gameObject.GetComponent<PolygonCollider2D>().enabled = false;
-                anim.SetBool("explosion", true);
-                if (soundplayed)
-                {
-                    audioSource.PlayOneShot(bite, 0.7f);
-                    audioSource.pitch = (Random.Range(0.4f, 0.9f));
-                    soundplayed = false;
-                    destruction = true;
-                }
+                couille = false;
+                StartCoroutine(Flick2());
+                enemislife = enemislife - 0.05f;
+            }
+
+        }
+
+
+        if (enemislife <= 0)
+        {
+            gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+            anim.SetBool("explosion", true);
+            if (soundplayed)
+            {
+                audioSource.PlayOneShot(bite, 0.7f);
+                audioSource.pitch = (Random.Range(0.4f, 0.9f));
+                soundplayed = false;
+                destruction = true;
             }
         }
     }
@@ -186,4 +181,12 @@ public class turretscript : MonoBehaviour
 
     }
 
+    IEnumerator Flick2()
+    {
+        yield return new WaitForSeconds(.1f);
+        renderers.material.color = colors[0];
+        yield return new WaitForSeconds(.1f);
+        renderers.material.color = colors[1];
+        couille = true;
+    }
 }

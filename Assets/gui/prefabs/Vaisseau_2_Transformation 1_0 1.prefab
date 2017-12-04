@@ -549,7 +549,7 @@ MonoBehaviour:
   evolution1: {fileID: 0}
   evolution2: {fileID: 1759142198638506, guid: dde9a68297135b24c9b0fe18eb07508f, type: 2}
   evolution3: {fileID: 0}
-  pubicmaxlife: 120
+  pubicmaxlife: 240
   speed: 30
   projectile: {fileID: 1544520364990988, guid: 56421a6704222884b82ff731a418f039, type: 2}
   debutprojectile1: {fileID: 1657119053364772}
@@ -595,7 +595,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 71daa9e8986c9f0468dbba59f2a6e3d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

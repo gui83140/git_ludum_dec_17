@@ -6,6 +6,9 @@ public class vaissseau3 : MonoBehaviour {
 
     public GameObject evolution3;
 
+
+    public static bool stadefinal;
+
     public static float actuallife2;
     public static float maxlife2;
     public static Vector3 posi;
@@ -216,6 +219,8 @@ public class vaissseau3 : MonoBehaviour {
         if (collision.gameObject.tag == "levelup")
         {
 
+
+
             GameObject la = Instantiate(evolution3);
             la.transform.position = posi;
             
@@ -225,6 +230,21 @@ public class vaissseau3 : MonoBehaviour {
         }
 
         if (collision.gameObject.tag == "enemis")
+        {
+
+            actuallife2 = actuallife2 - 50f;
+            if (actuallife2 <= 0)
+            {
+
+
+                audioSources[1].Play();
+                anim.SetBool("explosion", true);
+                destruction = true;
+            }
+
+        }
+
+        if (collision.gameObject.tag == "bigenemis")
         {
 
             actuallife2 = actuallife2 - 10000f;
@@ -238,5 +258,34 @@ public class vaissseau3 : MonoBehaviour {
             }
 
         }
+
+        if (collision.gameObject.tag == "Laser")
+        {
+
+            actuallife2 = actuallife2 - 1000f;
+            if (actuallife2 <= 0)
+            {
+
+                audioSources[1].Play();
+                anim.SetBool("explosion", true);
+                destruction = true;
+            }
+
+        }
+
+        if (collision.gameObject.tag == "BoxBoss")
+        {
+
+            actuallife2 = actuallife2 - 1000f;
+            if (actuallife2 <= 0)
+            {
+
+                audioSources[1].Play();
+                anim.SetBool("explosion", true);
+                destruction = true;
+            }
+
+        }
+
     }
 }

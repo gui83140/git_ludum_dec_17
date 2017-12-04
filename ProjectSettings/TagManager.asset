@@ -12,6 +12,10 @@ TagManager:
   - missilefriend
   - levelup
   - flumissile
+  - BossFire
+  - bigenemis
+  - Laser
+  - BoxBoss
   layers:
   - Default
   - TransparentFX

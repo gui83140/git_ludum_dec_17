@@ -211,10 +211,53 @@ public class shipcontroller2 : MonoBehaviour {
         if (collision.gameObject.tag == "enemis")
         {
 
+            actuallife2 = actuallife2 - 50f;
+            if (actuallife2 <= 0)
+            {
+
+
+                audioSources[1].Play();
+                anim.SetBool("explosion", true);
+                destruction = true;
+            }
+
+        }
+
+        if (collision.gameObject.tag == "bigenemis")
+        {
+
+            actuallife2 = actuallife2 - 10000f;
+            if (actuallife2 <= 0)
+            {
+
+
+                audioSources[1].Play();
+                anim.SetBool("explosion", true);
+                destruction = true;
+            }
+
+        }
+
+        if (collision.gameObject.tag == "Laser")
+        {
+
             actuallife2 = actuallife2 - 1000f;
             if (actuallife2 <= 0)
             {
 
+                audioSources[1].Play();
+                anim.SetBool("explosion", true);
+                destruction = true;
+            }
+
+        }
+
+        if (collision.gameObject.tag == "BoxBoss")
+        {
+
+            actuallife2 = actuallife2 - 1000f;
+            if (actuallife2 <= 0)
+            {
 
                 audioSources[1].Play();
                 anim.SetBool("explosion", true);

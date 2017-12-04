@@ -16,7 +16,7 @@ public class friendlymissile : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Transform.Destroy(this);
-        if (collision.gameObject.tag == "enemis")
+        if (collision.gameObject.tag == "enemis" || collision.gameObject.tag == "bigenemis" || collision.gameObject.tag == "Laser")
         {
             Destroy(gameObject);
         }

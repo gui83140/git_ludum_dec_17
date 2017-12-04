@@ -685,7 +685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d159288b7569f640b0e65f405bae4ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pubicmaxlife: 200
+  pubicmaxlife: 400
   speed: 8
   projectile: {fileID: 1544520364990988, guid: 8c487c2451ff19941971a9fc0dd68627, type: 2}
   debutprojectile1: {fileID: 1489657356483092}
@@ -746,7 +746,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 9bbf2eebf63f1874bb014c6e821e4e18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -7,16 +7,19 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
     bool gameHasEnded = false;
+    bool BossDead = false;
     public AudioClip[] Clips;
     private AudioSource[] audioSources;
 
     public Canvas Loose;
+    public Canvas Win;
 
     public float RestartDelay = 2f;
 
     void Start()
     {
         Loose.enabled = false;
+        Win.enabled = false;
         audioSources = new AudioSource[Clips.Length];
         int i = 0;
         while (i < Clips.Length)
@@ -31,7 +34,7 @@ public class GameManager : MonoBehaviour {
 
             i++;
         }
-        audioSources[0].Play();
+
     }
 
 	public void EndGame()
@@ -41,7 +44,6 @@ public class GameManager : MonoBehaviour {
             Loose.enabled = true;
             audioSources[1].Play();
             gameHasEnded = true;
-            Debug.Log("TA CHATTE");
             Invoke("Restart",RestartDelay);
         }
     }
@@ -49,5 +51,17 @@ public class GameManager : MonoBehaviour {
     void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void BossDefeated()
+    {
+        Debug.Log("oui");
+        if (BossDead == false)
+        {
+            Win.enabled = true;
+            audioSources[2].Play();
+            BossDead = true;
+            Invoke("Restart", 5f);
+        }
     }
 }

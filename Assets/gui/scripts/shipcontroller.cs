@@ -204,7 +204,7 @@ public class shipcontroller : MonoBehaviour
         if (collision.gameObject.tag == "enemis")
         {
 
-            actuallife = actuallife - 100f;
+            actuallife = actuallife - 50f;
             if (actuallife <= 0)
             {
 
@@ -214,7 +214,53 @@ public class shipcontroller : MonoBehaviour
             }
 
         }
+
+
+        if (collision.gameObject.tag == "bigenemis")
+        {
+
+            actuallife = actuallife - 1000f;
+            if (actuallife <= 0)
+            {
+
+                audioSources[1].Play();
+                anim.SetBool("explosion", true);
+                destruction = true;
+            }
+
+        }
+
+        if (collision.gameObject.tag == "Laser")
+        {
+
+            actuallife = actuallife - 1000f;
+            if (actuallife <= 0)
+            {
+
+                audioSources[1].Play();
+                anim.SetBool("explosion", true);
+                destruction = true;
+            }
+
+        }
+
+        if (collision.gameObject.tag == "BoxBoss")
+        {
+
+            actuallife = actuallife - 1000f;
+            if (actuallife <= 0)
+            {
+
+                audioSources[1].Play();
+                anim.SetBool("explosion", true);
+                destruction = true;
+            }
+
+        }
+
     }
+
+
 }
 
 

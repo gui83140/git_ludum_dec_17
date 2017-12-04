@@ -5,6 +5,8 @@ using UnityEngine;
 public class levelup : MonoBehaviour {
 
 
+
+
    private int number;
 
     Vector3 mvt;
@@ -53,9 +55,16 @@ public class levelup : MonoBehaviour {
             var box = GetComponent<BoxCollider2D>();
 
 
+            shipcontroller.actuallife = shipcontroller.actuallife + shipcontroller.maxlife / 4 ;
+            shipcontroller2.actuallife2 = shipcontroller2.actuallife2+  shipcontroller2.maxlife2/4;
+            vaissseau3.actuallife2 = vaissseau3.actuallife2 + vaissseau3.maxlife2/4;
+            vaissseaux4.actuallife2 = vaissseaux4.actuallife2 + vaissseaux4.maxlife2/4;
+
+
             rend.enabled = false;
             box.enabled = false;
             Destroy(gameObject, 2f);
+
             //riptableObject sn = gameObject.GetComponent<fondmanage>();
 
         }

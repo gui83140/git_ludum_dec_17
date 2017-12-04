@@ -42,10 +42,10 @@ public class healthpick : MonoBehaviour {
 
         if (collision.gameObject.tag == "friend")
         {
-            shipcontroller.actuallife = shipcontroller.actuallife +50;
-            shipcontroller2.actuallife2 = shipcontroller2.actuallife2 + 50;
-            vaissseau3.actuallife2 = vaissseau3.actuallife2 + 50;
-            vaissseaux4.actuallife2 = vaissseaux4.actuallife2 + 50;
+            shipcontroller.actuallife = shipcontroller.maxlife;
+            shipcontroller2.actuallife2 = shipcontroller2.maxlife2;
+            vaissseau3.actuallife2 = vaissseau3.maxlife2;
+            vaissseaux4.actuallife2 = vaissseaux4.maxlife2 ;
     
 
 
