@@ -226,7 +226,7 @@ public class vaissseau3 : MonoBehaviour {
         if (collision.gameObject.tag == "enemis")
         {
 
-            actuallife2 = actuallife2 - 100f;
+            actuallife2 = actuallife2 - 10000f;
             if (actuallife2 <= 0)
             {
 
