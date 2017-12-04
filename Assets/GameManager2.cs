@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour {
+public class GameManager2 : MonoBehaviour
+{
 
     bool gameHasEnded = false;
     bool BossDead = false;
@@ -37,14 +38,14 @@ public class GameManager : MonoBehaviour {
 
     }
 
-	public void EndGame()
+    public void EndGame()
     {
         if (gameHasEnded == false)
         {
             Loose.enabled = true;
             audioSources[1].Play();
             gameHasEnded = true;
-            Invoke("Restart",RestartDelay);
+            Invoke("Restart", RestartDelay);
         }
     }
 

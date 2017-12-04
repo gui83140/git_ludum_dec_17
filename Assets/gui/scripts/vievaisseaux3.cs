@@ -25,7 +25,7 @@ public class vievaisseaux3 : MonoBehaviour {
     void Update()
     {
         //transform.position = (following.transform.position + new Vector2(0,10));
-        transform.position = new Vector3(following.transform.position.x, following.transform.position.y - 1, 0);
+        transform.position = new Vector3(following.transform.position.x, following.transform.position.y - 1.6f, 0);
         healtbarre = vaissseau3.actuallife2;
         //healtbarre = healtbarre - 1;
 

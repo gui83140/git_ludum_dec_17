@@ -204,7 +204,7 @@ public class shipcontroller : MonoBehaviour
         if (collision.gameObject.tag == "enemis")
         {
 
-            actuallife = actuallife - 50f;
+            actuallife = actuallife - 500f;
             if (actuallife <= 0)
             {
 

@@ -89,12 +89,14 @@ public class scipturelboss : MonoBehaviour {
 
         if (destruction)
         {
+           
             timedestruction = timedestruction + 1;
             rb2d.constraints = RigidbodyConstraints2D.FreezePosition;
 
             if (timedestruction >= 40)
             {
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            
                 Destroy(gameObject);
 
             }
@@ -112,8 +114,6 @@ public class scipturelboss : MonoBehaviour {
         {
             //Debug.Log("zizi");
             onscreen = true;
-
-
         }
 
         if (collision.gameObject.tag == "outscreen")

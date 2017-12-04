@@ -10,6 +10,7 @@ public class turretscript : MonoBehaviour
     float timedestruction;
     bool destruction;
     Rigidbody2D rb2d;
+    bool couille;
 
     public float enemislife;
         
@@ -162,6 +163,12 @@ public class turretscript : MonoBehaviour
         if (collision.gameObject.tag == "flumissile")
         {
             enemislife = enemislife - .1f;
+            if (couille)
+            {
+                couille = false;
+                StartCoroutine(Flick2());
+                enemislife = enemislife - 0.05f;
+            }
 
             if (enemislife <= 0)
             {
@@ -186,4 +193,12 @@ public class turretscript : MonoBehaviour
 
     }
 
+    IEnumerator Flick2()
+    {
+        yield return new WaitForSeconds(.1f);
+        renderers.material.color = colors[0];
+        yield return new WaitForSeconds(.1f);
+        renderers.material.color = colors[1];
+        couille = true;
+    }
 }

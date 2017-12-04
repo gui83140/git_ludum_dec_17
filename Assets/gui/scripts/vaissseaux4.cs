@@ -249,14 +249,6 @@ public class vaissseaux4 : MonoBehaviour
             // Destroy(gameObject);
         }
 
-        if (collision.gameObject.tag == "levelup")
-        {
-            Debug.Log("joie");
-
-            //Debug.Log("bite");
-            // Destroy(gameObject);
-        }
-
         if (collision.gameObject.tag == "enemis")
         {
 

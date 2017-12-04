@@ -5,14 +5,17 @@ using UnityEngine;
 public class healthpick : MonoBehaviour {
 
 
-   // float posx;
-   // float posy;
+    // float posx;
+    // float posy;
+    Renderer rend;
     Vector3 mvt;
     public float speed;
+    AudioSource SFX;
 	// Use this for initialization
 	void Start () {
-       // mvt = new Vector3(transform.position.x, transform.position.y, 0);
-        
+        // mvt = new Vector3(transform.position.x, transform.position.y, 0);
+        SFX = GetComponent<AudioSource>();
+        rend = GetComponent<SpriteRenderer>();
 
     }
 	
@@ -21,7 +24,7 @@ public class healthpick : MonoBehaviour {
         
        // posy = posy + 1;
 
-        transform.Rotate(0, 2,0);
+        //transform.Rotate(0, 2,0);
         transform.position = new Vector3(transform.position.x, transform.position.y - 1*speed, 0);
 		
 	}
@@ -42,15 +45,21 @@ public class healthpick : MonoBehaviour {
 
         if (collision.gameObject.tag == "friend")
         {
-            shipcontroller.actuallife = shipcontroller.maxlife;
-            shipcontroller2.actuallife2 = shipcontroller2.maxlife2;
-            vaissseau3.actuallife2 = vaissseau3.maxlife2;
-            vaissseaux4.actuallife2 = vaissseaux4.maxlife2 ;
-    
-
-
-            Destroy(gameObject);
-
+            StartCoroutine(tarace());      
         }
+    }
+
+    IEnumerator tarace()
+    {
+        SFX.Play();
+        var box = GetComponent<BoxCollider2D>();
+        rend.enabled = false;
+        box.enabled = false;
+        shipcontroller.actuallife = shipcontroller.maxlife;
+        shipcontroller2.actuallife2 = shipcontroller2.maxlife2;
+        vaissseau3.actuallife2 = vaissseau3.maxlife2;
+        vaissseaux4.actuallife2 = vaissseaux4.maxlife2;
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
     }
 }

@@ -48,7 +48,6 @@ public class bossccipt : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         soundplayed = true;
 
-
     }
 
 
@@ -109,11 +108,6 @@ public class bossccipt : MonoBehaviour {
     }
     void Update()
     {
-
-
-       // Debug.Log("blaz");
-
-
         if (transform.position.y > 4.5)
         {
             transform.position = new Vector2(0, transform.position.y - 1 * speedY);
@@ -153,7 +147,6 @@ public class bossccipt : MonoBehaviour {
             StartCoroutine(AttackAction());
           
         }
-
        /* if (destruction)
         {
             timedestruction = timedestruction + 1;
@@ -173,17 +166,13 @@ public class bossccipt : MonoBehaviour {
         bool Attaque1 = (Random.value < .5f);
         bool Attaque2 = (Random.value < .5f);
         bool Attaque3 = (Random.value < .5f);
-       // Debug.Log(Attaque1);
-        //Debug.Log(Attaque2);
-        //Debug.Log(Attaque3);
+        Debug.Log(Attaque1);
+        Debug.Log(Attaque2);
+        Debug.Log(Attaque3);
 
         if (Attaque1 & !Attaque2 & !Attaque3)
-        {
-
-            lazer1 = true;
-
-            
-         //   Laser();
+        {          
+            Laser();
             Attaque1 = false;
         }
 
@@ -210,7 +199,7 @@ public class bossccipt : MonoBehaviour {
 
         if (Attaque1 & !Attaque2 & Attaque3)
         {
-           // Laser();
+            Laser();
             Attaque1 = false;
         }
 
@@ -229,7 +218,7 @@ public class bossccipt : MonoBehaviour {
 
         if (!Attaque2 & !Attaque3 & !Attaque1)
         {
-            //Laser();
+            Laser();
             Attaque1 = false;
         }
         yield return new WaitForSeconds(8f);
@@ -288,7 +277,7 @@ public class bossccipt : MonoBehaviour {
         } 
     }
 
-  /*  void Laser()
+   void Laser()
     {
         anim.SetBool("Attack", true);
         StartCoroutine(Jaja());
@@ -323,5 +312,5 @@ public class bossccipt : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
         TrueLaser();
-    }*/
+    }
 }

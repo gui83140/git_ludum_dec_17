@@ -6,5 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/GRAPH/Ships/scene proto GASTON.unity
-    guid: f059982462ddef148a4b9ff8a35bcac9
+    path: Assets/GRAPH/Ships/scene proto GASTON 1.unity
+    guid: fa85ab79d0a3b1a49994746adbd3edbb
